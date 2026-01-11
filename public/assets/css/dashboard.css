@@ -171,3 +171,16 @@ body.layout-menu-collapsed .layout-page {
         margin-top: 10px;
     }
 }
+
+/* =========================================================
+   DEKSTOP Calendar 
+========================================================= */
+/* ===== MINI CALENDAR MODERN ===== */
+.app-calendar-wrapper {
+    min-height: calc(100vh - 180px);
+}
+
+.app-calendar-content,
+#calendar {
+    height: 100%;
+}

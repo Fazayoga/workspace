@@ -23,44 +23,108 @@
 
     <ul class="menu-inner py-1">
         <!-- Dashboards -->
-        <li class="menu-item active open">
-            <a href="javascript:void(0);" class="menu-link">
+        <li class="menu-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+            <a href="{{ route('dashboard') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-smile"></i>
-                <div class="text-truncate" data-i18n="Dashboards">Dashboards</div>
+                <div class="text-truncate" data-i18n="Dashboards">Dashboard</div>
                 <span class="badge rounded-pill bg-danger ms-auto">5</span>
             </a>
         </li>
-
-        <!-- Front Pages -->
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-task"></i> <!-- icon baru Tugas -->
-                <div class="text-truncate" data-i18n="Tugas">Tugas</div>
+        <li class="menu-item {{ request()->routeIs('pegawai') ? 'active' : '' }}">
+            <a href="{{ route('pegawai') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-group"></i>
+                <div class="text-truncate">Pegawai</div>
             </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="" class="menu-link">
-                        <i class="menu-icon tf-icons bx bx-user-check"></i> <!-- icon baru Tugas Saya -->
-                        <div class="text-truncate" data-i18n="Tugas Saya">Tugas Saya</div>
-                    </a>
-                </li>
-            </ul>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="" class="menu-link">
-                        <i class="menu-icon tf-icons bx bx-file"></i> <!-- icon Laporan Saya -->
-                        <div class="text-truncate" data-i18n="Laporan Saya">Laporan Saya</div>
-                    </a>
-                </li>
-            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="#" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-calendar-check"></i>
+                <div class="text-truncate">Ijin / Cuti</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-wallet-alt"></i>
+                <div class="text-truncate">Slip Gaji</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-broadcast"></i>
+                <div class="text-truncate">Broadcast</div>
+            </a>
+        </li>
+        <li
+            class="menu-item {{ request()->is('data-absensi*', 'absen-disetujui*', 'reimbursement*', 'treking-lokasi*') ? 'active open' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-check-square"></i>
+                <div class="text-truncate">Absensi</div>
+            </a>
 
             <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="" class="menu-link">
-                        <i class="menu-icon tf-icons bx bx-calendar"></i> <!-- icon Kalender -->
-                        <div class="text-truncate" data-i18n="Kalender">Kalender</div>
+                <li class="menu-item {{ request()->is('data-absensi*') ? 'active' : '' }}">
+                    <a href="{{ route('data-absensi') }}" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-user-check"></i>
+                        <div class="text-truncate">Data Absensi</div>
                     </a>
                 </li>
+
+                <li class="menu-item {{ request()->is('absen-disetujui*') ? 'active' : '' }}">
+                    <a href="{{ url('absen-disetujui') }}" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-check-circle"></i>
+                        <div class="text-truncate">Persetujuan</div>
+                    </a>
+                </li>
+
+                <li class="menu-item {{ request()->is('reimbursement*') ? 'active' : '' }}">
+                    <a href="{{ url('reimbursement') }}" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-receipt"></i>
+                        <div class="text-truncate">Reimbursement</div>
+                    </a>
+                </li>
+
+                <li class="menu-item {{ request()->is('treking-lokasi*') ? 'active' : '' }}">
+                    <a href="{{ url('treking-lokasi') }}" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-current-location"></i>
+                        <div class="text-truncate">Treking Lokasi</div>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+        <!-- Front Pages -->
+        <li
+            class="menu-item 
+            {{ request()->routeIs('tugas-saya', 'laporan-saya', 'calender') ? 'active open' : '' }}">
+
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-task"></i>
+                <div class="text-truncate">Tugas</div>
+            </a>
+
+            <ul class="menu-sub">
+
+                <li class="menu-item {{ request()->routeIs('tugas-saya') ? 'active' : '' }}">
+                    <a href="{{ route('tugas-saya') }}" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-group"></i>
+                        <div class="text-truncate">Tugas Saya</div>
+                    </a>
+                </li>
+
+                <li class="menu-item {{ request()->routeIs('laporan-saya') ? 'active' : '' }}">
+                    <a href="{{ route('laporan-saya') }}" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-file"></i>
+                        <div class="text-truncate">Laporan Saya</div>
+                    </a>
+                </li>
+
+                <li class="menu-item {{ request()->routeIs('calender') ? 'active' : '' }}">
+                    <a href="{{ route('calender') }}" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-calendar"></i>
+                        <div class="text-truncate">Calender</div>
+                    </a>
+                </li>
+
             </ul>
         </li>
 

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/iconify-icons.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendor/css/core.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/dashboard.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/apex-charts/apex-charts.css') }}" />
     <script src="{{ asset('assets/vendor/js/helpers.js') }}"></script>
@@ -30,7 +31,7 @@
             <div class="layout-page">
                 @include('partials.navbar')
                 <div class="content-wrapper">
-                    <div class="container-xxl flex-grow-1 container-p-y">
+                    <div class="container-fluid flex-grow-1 container-p-y">
                         @yield('content')
                     </div>
                     @include('partials.footer')
@@ -50,6 +51,20 @@
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="{{ asset('assets/js/dashboards-analytics.js') }}"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggle = document.getElementById("desktopMenuToggle");
+            const icon = toggle.querySelector("i");
+
+            toggle.addEventListener("click", function() {
+                document.body.classList.toggle("layout-menu-collapsed");
+
+                icon.classList.toggle("bx-chevron-left");
+                icon.classList.toggle("bx-chevron-right");
+            });
+        });
+    </script>
+
 </body>
 
 </html>

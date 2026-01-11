@@ -1,10 +1,16 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-    <div class="app-brand demo">
-        <a href="{{ url('/') }}" class="app-brand-link">
+    <div class="app-brand demo position-relative">
+        <a href="{{ url('/') }}" class="app-brand-link d-flex align-items-center">
             <img src="{{ asset('assets/img/logo/logo.png') }}" alt="WorkSpace" style="height: 25px;">
             <span class="app-brand-text demo menu-text fw-bold ms-2">WorkSpace</span>
         </a>
 
+        <!-- Tombol toggle desktop -->
+        <a href="javascript:void(0);" id="desktopMenuToggle" class="layout-menu-toggle menu-link text-large ms-auto">
+            <i class="bx bx-chevron-left align-middle"></i>
+        </a>
+
+        <!-- Tombol mobile -->
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
             <i class="bx bx-chevron-left align-middle"></i>
         </a>
@@ -18,124 +24,41 @@
     <ul class="menu-inner py-1">
         <!-- Dashboards -->
         <li class="menu-item active open">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <a href="javascript:void(0);" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-smile"></i>
                 <div class="text-truncate" data-i18n="Dashboards">Dashboards</div>
                 <span class="badge rounded-pill bg-danger ms-auto">5</span>
             </a>
-            <ul class="menu-sub">
-                <li class="menu-item active">
-                    <a href="index.html" class="menu-link">
-                        <div class="text-truncate" data-i18n="Analytics">Analytics</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/dashboards-crm.html"
-                        target="_blank" class="menu-link">
-                        <div class="text-truncate" data-i18n="CRM">CRM</div>
-                        <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro
-                        </div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-ecommerce-dashboard.html"
-                        target="_blank" class="menu-link">
-                        <div class="text-truncate" data-i18n="eCommerce">eCommerce</div>
-                        <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro
-                        </div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-logistics-dashboard.html"
-                        target="_blank" class="menu-link">
-                        <div class="text-truncate" data-i18n="Logistics">Logistics</div>
-                        <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro
-                        </div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-academy-dashboard.html"
-                        target="_blank" class="menu-link">
-                        <div class="text-truncate" data-i18n="Academy">Academy</div>
-                        <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-
-        <!-- Layouts -->
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div class="text-truncate" data-i18n="Layouts">Layouts</div>
-            </a>
-
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="layouts-without-menu.html" class="menu-link">
-                        <div class="text-truncate" data-i18n="Without menu">Without menu</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="layouts-without-navbar.html" class="menu-link">
-                        <div class="text-truncate" data-i18n="Without navbar">Without navbar</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="layouts-fluid.html" class="menu-link">
-                        <div class="text-truncate" data-i18n="Fluid">Fluid</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="layouts-container.html" class="menu-link">
-                        <div class="text-truncate" data-i18n="Container">Container</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="layouts-blank.html" class="menu-link">
-                        <div class="text-truncate" data-i18n="Blank">Blank</div>
-                    </a>
-                </li>
-            </ul>
         </li>
 
         <!-- Front Pages -->
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-store"></i>
-                <div class="text-truncate" data-i18n="Front Pages">Front Pages</div>
-                <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
+                <i class="menu-icon tf-icons bx bx-task"></i> <!-- icon baru Tugas -->
+                <div class="text-truncate" data-i18n="Tugas">Tugas</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/landing-page.html"
-                        class="menu-link" target="_blank">
-                        <div class="text-truncate" data-i18n="Landing">Landing</div>
+                    <a href="" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-user-check"></i> <!-- icon baru Tugas Saya -->
+                        <div class="text-truncate" data-i18n="Tugas Saya">Tugas Saya</div>
                     </a>
                 </li>
+            </ul>
+            <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/pricing-page.html"
-                        class="menu-link" target="_blank">
-                        <div class="text-truncate" data-i18n="Pricing">Pricing</div>
+                    <a href="" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-file"></i> <!-- icon Laporan Saya -->
+                        <div class="text-truncate" data-i18n="Laporan Saya">Laporan Saya</div>
                     </a>
                 </li>
+            </ul>
+
+            <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/payment-page.html"
-                        class="menu-link" target="_blank">
-                        <div class="text-truncate" data-i18n="Payment">Payment</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/checkout-page.html"
-                        class="menu-link" target="_blank">
-                        <div class="text-truncate" data-i18n="Checkout">Checkout</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/help-center-landing.html"
-                        class="menu-link" target="_blank">
-                        <div class="text-truncate" data-i18n="Help Center">Help Center</div>
+                    <a href="" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-calendar"></i> <!-- icon Kalender -->
+                        <div class="text-truncate" data-i18n="Kalender">Kalender</div>
                     </a>
                 </li>
             </ul>
